@@ -3,15 +3,22 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+int randy() {
+  printf("Here ->");
+  int s = open("/dev/random",O_RDONLY);
+  int *a;
+  read(s,a,4);
+  return *a;
+}
+
 int main() {
-  srand(time(NULL));
   int a1[10];
   int a2[10];
   int i = 0;
   int fd;
   printf("Generating random numbers:\n");
   for (i; i < 10; i++) {
-    int r = rand();
+    int r = randy();
     a1[i] = r;
     printf("\trandom %d: %d\n",i,r);
   }
