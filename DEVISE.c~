@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fnctl.h>
+
+int main() {
+  sranddev();
+  int a1[10];
+  int a2[10];
+  int i = 0;
+  for (i; i < 10; i++) {
+    a1[i] = rand();
+  }
+  
+}
